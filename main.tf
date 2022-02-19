@@ -2,8 +2,8 @@
 # first initialized using terraform init command.
 provider "aws" {
   # AWS credentials will be supplied using CodeBuild’s service role.
-  # profile = "tf-user" # make aws credientials accessed through the profile created using aws CLI. 
-  region = "us-west-2"
+  profile = "tf-user" # make aws credientials accessed through the profile created using aws CLI. 
+  region  = "us-west-2"
 }
 
 
@@ -24,7 +24,7 @@ resource "aws_instance" "helloworld" {
   ami           = data.aws_ami.ubuntu.id # amazon machine image we select, whenever we need to create an instance.
   instance_type = "t2.micro"
   tags = {
-    Name = "HelloWorld"
+    Name = "terraform-ci-cd"
   }
 }
 
