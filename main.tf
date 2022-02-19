@@ -6,6 +6,7 @@ provider "aws" {
   region = "us-west-2"
 }
 
+
 # type and name of the data source must be unique within the module.
 data "aws_ami" "ubuntu" {
   most_recent = true # get the latest AMI.
